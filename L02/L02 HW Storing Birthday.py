@@ -1,0 +1,13 @@
+name1 = input("When is your birthday,Aarvi: ")
+print()
+name2 = input("When is your birthday,Gauri: ")
+print()
+name3 = input("When is your birthday,Kaashvi: ")
+print()
+name4 = input("When is your birthday,Tanishka: ")
+print()
+
+print("Aarvi your birthday is on "+name1)
+print("Gauri your birthday is on "+name2)
+print("Kaashvi your birthday is on "+name3)
+print("Tanishka your birthday is on "+name4)
