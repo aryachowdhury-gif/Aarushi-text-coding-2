@@ -167,7 +167,7 @@ while running:
 
     if bullet_state == "fire":
         fire_bullet(bulletX, bulletY)
-        bulletY -= bulletX_change
+        bulletY -= bulletY_change
 
     player(playerX, playerY)
     show_score(textX, testY)
