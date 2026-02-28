@@ -10,7 +10,7 @@ def display():
     greet = "Hey " + name
     message = "\nCongratulation for you new account!"
     res.insert(END, greet)
-    res.insert(END, name)
+    res.insert(END, message)
 
 #create widgets
 new_frame = Frame(master=window, height=200, width=360, bg="#ff006f")
@@ -30,4 +30,17 @@ btn = Button(text="Create Account", command=display, bg="red", fg="yellow")
 #arrange all widgets
 new_frame.place(x=20, y=0)
 
-LbL1.place(x=150, y=20)
+LbL1.place(x=20, y=20)
+name_entry.place(x=150, y=20)
+
+LbL2.place(x=20, y=80)
+email_entry.place(x=150, y=80)
+
+LbL3.place(x=20, y=140)
+pass_entry.place(x=150, y=140)
+
+btn.place(x=130, y=210)
+
+res.place(y=250)
+
+window.mainloop()
