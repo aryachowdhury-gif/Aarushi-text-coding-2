@@ -11,19 +11,19 @@ pygame.init()
 screen = pygame.display.set_mode((800, 500))
 
 # Background
-background = pygame.image.load("L37 - L38/space invader/background.png")
+background = pygame.image.load("project/space invader/background.png")
 
 # Sound
-mixer.music.load("L37 - L38/space invader/background.wav")
+mixer.music.load("project/space invader/background.wav")
 mixer.music.play(-1)
 
 # Caption and Icon
 pygame.display.set_caption("Space Invader")
-icon = pygame.image.load("L37 - L38/space invader/ufo.png")
+icon = pygame.image.load("project/space invader/ufo.png")
 pygame.display.set_icon(icon)
 
 # Player
-playerImg = pygame.image.load("L37 - L38/space invader/player.png")
+playerImg = pygame.image.load("project/space invader/player.png")
 playerX = 370
 playerY = 380
 playerX_change = 0
@@ -37,7 +37,7 @@ enemyY_change = []
 num_of_enemies = 3
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('L37 - L38/space invader/enemy.png'))
+    enemyImg.append(pygame.image.load('project/space invader/enemy.png'))
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(4) #make the alien moving right automatically
@@ -46,7 +46,7 @@ for i in range(num_of_enemies):
 # Bullet
 # Ready - You can't see the bullet on the screen
 # Fire - The bullet is currently moving
-bulletImg = pygame.image.load("L37 - L38/space invader/bullet.png")
+bulletImg = pygame.image.load("project/space invader/bullet.png")
 bulletX = 0
 bulletY = 380
 bulletX_change = 0
@@ -112,7 +112,7 @@ while running:
                 playerX_change = 5
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
-                    bulletSound = mixer.Sound("L37 - L38/space invader/laser.wav")
+                    bulletSound = mixer.Sound("project/space invader/laser.wav")
                     bulletSound.play()
 
                     # Get the current x cordinate of the spaceship
@@ -141,16 +141,16 @@ while running:
 
         enemyX[i] += enemyX_change[i]
         if enemyX[i] <= 0:
-            enemyX_change[i] = 4
+            enemyX_change[i] = 6
             enemyY[i] += enemyY_change[i]
         elif enemyX[i] >= 736:
-            enemyX_change[i] = -4
+            enemyX_change[i] = -6
             enemyY[i] += enemyY_change[i]
 
         # Collision
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            explosionSound = mixer.Sound("L37 - L38/space invader/explosion.wav")
+            explosionSound = mixer.Sound("project/space invader/explosion.wav")
             explosionSound.play()
             bulletY = 380
             bullet_state = "ready"
